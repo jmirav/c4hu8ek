@@ -1,7 +1,7 @@
 module Authenticable
   # Devise methods overwrites
   def current_user
-    @current_user ||= User.find_by(api_token: request.headers['X-Api-Token'])
+    @current_user ||= User.find_by(api_token: request.headers['X-Api-Token'], email: request.headers['X-User-Email'])
   end
 
   def authenticate_with_token!
