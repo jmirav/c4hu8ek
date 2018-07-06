@@ -1,5 +1,5 @@
 class Api::V1::PinsController < ApplicationController
-  before_action :authenticate_with_token!, except: [:index]
+  before_action :authenticate_with_token!
   respond_to :json
 
   def index
